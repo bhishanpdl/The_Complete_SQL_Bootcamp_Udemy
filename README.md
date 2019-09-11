@@ -1,3 +1,12 @@
+Table of Contents
+=================
+   * [Complete_SQL_bootcamp_Udemy](#complete_sql_bootcamp_udemy)
+   * [My solutions](#my-solutions)
+      * [Section 2: SQL Statements](#section-2-sql-statements)
+      * [Section 3: Aggregation Group by](#section-3-aggregation-group-by)
+   * [Course description](#course-description)
+   * [SQL Introduction](#sql-introduction)
+
 # Complete_SQL_bootcamp_Udemy
 Course link: https://www.udemy.com/the-complete-sql-bootcamp/
 
@@ -8,7 +17,7 @@ Course link: https://www.udemy.com/the-complete-sql-bootcamp/
 
 ## Section 3: Aggregation Group by
 - [section3 notebook](https://github.com/bhishanpdl/The_Complete_SQL_Bootcamp_Udemy/blob/master/Section3_Aggregation/section3.ipynb)
-- [sectioin3 nbviewer](https://nbviewer.jupyter.org/github/bhishanpdl/The_Complete_SQL_Bootcamp_Udemy/blob/master/Section3_Aggregation/section3.ipynb)
+- [section3 nbviewer](https://nbviewer.jupyter.org/github/bhishanpdl/The_Complete_SQL_Bootcamp_Udemy/blob/master/Section3_Aggregation/section3.ipynb)
 
 
 # Course description
