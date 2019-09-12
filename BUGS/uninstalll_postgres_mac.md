@@ -62,4 +62,6 @@ createdb: could not connect to database template1: could not connect to server: 
 - restarted the pgadmig, gives the database but tables are empty.
 - dropped the dvdrental database.
 - tried to create database from restore.sql, but also failed.
+- Restarted pgadmin, it gives error, but IT WORKS.
+- open Query tool in pgadmin and type `select * from customer limit 5;` hit F5, it runs. GOOD!!!
 
