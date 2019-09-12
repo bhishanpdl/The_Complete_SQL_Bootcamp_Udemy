@@ -9,3 +9,25 @@ On my laptop I have postgres10 installed from official website .dmg file and pos
   + corrected dvdrental.tar failed.
   + I download the dvdrental.tar from course website and tried to intall using pgadmin, it failed.
 - On date Sep 11, 2019, I decided to uninstall both, and fresh install only postgres10.
+
+# uninstallation
+```bash
+# 11
+brew uninstall --ignore-dependencies postgresql
+
+# 10
+ cd /Library/PostgreSQL/
+ 
+ cd 10
+ open uninstall-postgresql.app/
+ sudo rm -rf 11
+ 
+ cd 10/
+ sudo open uninstall-postgresql.app
+ 
+ cd /Applications/
+ cd PostgreSQL\ 10/
+```
+
+# Re install
+- download macos installer for 10.10 from https://www.enterprisedb.com/thank-you-downloading-postgresql?anid=1256720
