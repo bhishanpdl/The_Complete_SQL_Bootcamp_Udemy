@@ -58,4 +58,8 @@ createdb: could not connect to database template1: could not connect to server: 
 ### attempt3 11.5 installer and pgadmin separately
 - first installed pgadmin4 to applications, gives no error
 - installed 11.5, unchecked pgadmin4 option, gives no error.
+- tried to create database from dvdrental.tar file, gives error.
+- restarted the pgadmig, gives the database but tables are empty.
+- dropped the dvdrental database.
+- tried to create database from restore.sql, but also failed.
 
