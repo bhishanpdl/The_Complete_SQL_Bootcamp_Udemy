@@ -1,6 +1,9 @@
 # Database: dvdrental
-CAVEAT: The table staff is corrupted, it runs fine in pgAdmin but fails in jupyter notebook. It has 2 good rows 
+CAVEAT: 
+- The table staff is corrupted, it runs fine in pgAdmin but fails in jupyter notebook. It has 2 good rows 
 and third row has one dot.
+
+- We need to allow to upload .tar file to github in .gitignore file.
 
 ## schema
 ![](dvdrental_schema.png)
