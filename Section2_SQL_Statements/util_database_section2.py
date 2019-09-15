@@ -77,7 +77,7 @@ and TABLE_NAME  not like 'sql_%'""".format(dbname)
 
     print(df['table_name'].values.tolist())
     
-def show_given_tables_info(dbname, tablename):
+def show_given_tables_info(dbname, table_name):
     """Show the column names, data types and one example of
        all columns in table.
        
@@ -89,7 +89,7 @@ def show_given_tables_info(dbname, tablename):
     """
     sql_query = r"""select column_name, data_type, character_maximum_length
     from INFORMATION_SCHEMA.COLUMNS 
-    where table_name = '{}';""".format(tablename)
+    where table_name = '{}';""".format(table_name)
     #print(execute_query(sql_query, dbname))
     
     # first get postgres configs
@@ -100,6 +100,34 @@ def show_given_tables_info(dbname, tablename):
         df = pd.read_sql(sql_query, conn)
 
     return df.fillna('')
+
+def show_tables_primary_keys(dbname, table_name):
+    """Show the primary keys of given table.
+       
+    Example:
+    ========
+    from util_database import show_tables_primary_keys
+    show_tables_primary_keys(dbname, 'customer')
+    
+    """
+    sql_query = """SELECT KU.table_name as TABLENAME,column_name as PRIMARYKEYCOLUMN
+    FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS AS TC
+    INNER JOIN
+        INFORMATION_SCHEMA.KEY_COLUMN_USAGE AS KU
+              ON TC.CONSTRAINT_TYPE = 'PRIMARY KEY' AND
+                 TC.CONSTRAINT_NAME = KU.CONSTRAINT_NAME AND 
+                 KU.table_name='{}'
+    ORDER BY KU.TABLE_NAME, KU.ORDINAL_POSITION;""".format(table_name)
+    
+    # first get postgres configs
+    dbname, dbuser, dbpass, dbport = get_postgres_configs(dbname)
+    
+    # connect to the database
+    with get_conn(dbname,dbuser,dbpass) as conn:
+        df = pd.read_sql(sql_query, conn)
+
+    return df
+
 
 def get_pandas_dataframe(dbname, tablename):
     # first get postgres configs
